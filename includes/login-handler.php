@@ -3,7 +3,6 @@
 
     //includes
     include './includes/config.php';
-    include './includes/database.php';
 
     if (isset($_POST['username'])){
         $username = stripslashes($_REQUEST['username']);

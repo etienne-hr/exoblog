@@ -17,8 +17,8 @@
     
     <h1>Connexion</h1>
     <form action="#" method="post">
-        <input type="text"  name="username" placeholder="Nom d'utilisateur">
-        <input type="password" name="password" placeholder="Mot de passe">
+        <input type="text"  name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
         <input type="submit" value="Connexion " name="submit">
     </form>
 

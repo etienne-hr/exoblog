@@ -2,8 +2,6 @@
 
     //includes
     include './includes/login-handler.php';
-    include './includes/config.php';
-
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -16,9 +14,8 @@
     </head>
     <body>
         <h1>Mon blog voyage</h1>
-        <?php 
-
         
+        <?php 
             foreach ($articles as $key => $article) 
             {   
                 $articleId = $article->id;
@@ -31,10 +28,16 @@
                 if($_SESSION == true)
                 {
                     echo '<h2><a href="./includes/articles.php?id='.$articleId.'&article='.$title.'">'.$title.'</a></h2>';
+                    echo '<div class="img-article">
+                        <img src="./images/'.$title.'.jpg" alt="'.$title.'">
+                    </div>';
                 }
                 else
                 {
                     echo '<h2><a href="./login.php">'.$title.'</a></h2>';
+                    echo '<div class="img-article">
+                        <img src="./images/'.$title.'.jpg" alt="'.$title.'">
+                    </div>';
                 }
                 echo '<span> '.$date.' </span>';
             }

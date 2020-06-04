@@ -3,7 +3,6 @@
     session_start();
     //includes 
     include './config.php';
-    include './database.php';
 
     $title = $_GET['article'];
     $id = $_GET['id'];
@@ -25,6 +24,25 @@
     $queryUserID= $pdo->query("SELECT id FROM `users` WHERE login = '$session' ");
     $userId = $queryUserID->fetch();
 
+    // commentary section 
+    $commentValue = '';
+    if($_POST)
+    {
+    $commentValue = $_POST['sendcomment'];
+    
+    
+    $newComment = $commentValue;
+    $sendUserId = $userId->id;
+    
+    $prepare = $pdo->prepare('INSERT INTO comments (id_article, text, user_id) VALUES (:id_article, :text, :user_id)');
+    $prepare->bindValue(':id_article', $id);
+    $prepare->bindValue(':text', $newComment);
+    $prepare->bindValue(':user_id', $sendUserId);
+    $execute = $prepare->execute();
+    $commentValue = '';
+    header('Location: ./articles.php?id='.$id.'&article='.$title.'');
+    exit;
+    }
 
 ?>
 
@@ -67,25 +85,6 @@
                 
                 echo '<div> '.$users.' : '.$commentText.' </div>';
             }
-    ?>
-    <?php
-        $commentValue = '';
-        if($_POST)
-        {
-        $commentValue = $_POST['sendcomment'];
-        
-        
-        $newComment = $commentValue;
-        $sendUserId = $userId->id;
-        
-        $prepare = $pdo->prepare('INSERT INTO comments (id_article, text, user_id) VALUES (:id_article, :text, :user_id)');
-        $prepare->bindValue(':id_article', $id);
-        $prepare->bindValue(':text', $newComment);
-        $prepare->bindValue(':user_id', $sendUserId);
-        $execute = $prepare->execute();
-        header('Location: http://localhost/blog/includes/articles.php?id='.$id.'&article='.$title.'');
-        $commentValue = '';
-        }
     ?>
             </section>
 

@@ -1,6 +1,6 @@
 <?php
 
-    include './includes/database.php';
+    include './includes/config.php';
 
     //select login
     $queryLogin = $pdo->query('SELECT login FROM users');
