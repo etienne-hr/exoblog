@@ -45,7 +45,7 @@
                         
                         echo '<div class="img-article">
                             <span> '.$date.' </span>
-                            <a href="./includes/articles.php?id='.$articleId.'&article='.$title.'"><img src="./images/'.$title.'.png" alt="'.$title.'"></a>
+                            <a href="./articles.php?id='.$articleId.'&article='.$title.'"><img src="./images/'.$title.'.png" alt="'.$title.'"></a>
                                 <p> '.$title.' </p>
                         </div>';
                     }

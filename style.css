@@ -231,6 +231,23 @@ fieldset
     color: rgb(221, 47, 16);
 }
 
+/* pages articles */
+
+.page-article 
+{
+    height: 500px;
+    width: 100%;
+}
+
+
+
+.page-article h2
+{
+    display: inline;
+    font-size: 15em;
+    margin-left: 20%;
+}
+
 
 
 

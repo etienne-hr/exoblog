@@ -2,7 +2,7 @@
 
     session_start();
     //includes 
-    include './config.php';
+    include './includes/config.php';
 
     $title = $_GET['article'];
     $id = $_GET['id'];
@@ -44,6 +44,22 @@
     exit;
     }
 
+    $commentUserTab = [];
+
+    foreach ($commentsArticle as $key => $comment) 
+            {
+                //select users comment
+                $commentText = $comment->text;
+                $commentUser = $comment->user_id;
+                
+                $queryUsers = $pdo->query('SELECT login, id FROM users WHERE id = '.$commentUser.'');
+                $users = $queryUsers->fetch();
+                $users = $users->login;
+
+                //for templating
+                $commentUserTab[] = ["username" => "$users", "text" => "$commentText"];
+            }
+ 
 ?>
 
 <!DOCTYPE html>
@@ -51,11 +67,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <title><?= $title ?> </title>
 </head>
 <body>
-    <h2><?= $title ?></h2>
+    <header class="page-article">
+        <h2><?= $title ?>,</h2>
+    </header>
+    <div class="back-home">
+        <a href="./index.php"><img src="images/home.png" alt="login"></a>
+    </div>
     <?php 
             foreach ($article as $key => $section) 
             {   
@@ -74,16 +96,10 @@
             <section>
             <span> Section commentaire :</span>
     <?php
-            foreach ($commentsArticle as $key => $comment) 
+            foreach ($commentUserTab as $key => $comment) 
             {
-                //select users comment
-                $commentText = $comment->text;
-                $commentUser = $comment->user_id;
-                
-                $queryUsers = $pdo->query('SELECT login, id FROM users WHERE id = '.$commentUser.'');
-                $users = $queryUsers->fetch();
-                $users = $users->login;
-                
+                $commentUser = $comment["username"];
+                $commentText = $comment["text"];
                 echo '<div> '.$users.' : '.$commentText.' </div>';
             }
     ?>
