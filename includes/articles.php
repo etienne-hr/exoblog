@@ -51,16 +51,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title><?= $title ?> </title>
 </head>
 <body>
-    <h3><?= $title ?></h3>
+    <h2><?= $title ?></h2>
     <?php 
             foreach ($article as $key => $section) 
             {   
                 $setDateOnArticle = $section->date; //the date in timestamp
                 $timeStamp->setTimestamp($setDateOnArticle); //convert timestamp in french date 
-                $date = $timeStamp->format('d-m-Y H:i:s');
+                $date = $timeStamp->format('d-m-Y');
 
                 $text = $section->text;
 

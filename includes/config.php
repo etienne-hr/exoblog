@@ -17,7 +17,7 @@
     
 
     // Gender
-    $genders = ['female', 'male', 'apache helicopter', 'other'];
+    $genders = ['female', 'male', 'other'];
 
     //For articles in index.php and articles.php
     $query = $pdo->query('SELECT * FROM articles');

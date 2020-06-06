@@ -3,6 +3,7 @@
 
     //includes
     include './includes/config.php';
+    $messageErrorLogin = '';
 
     if (isset($_POST['username'])){
         $username = stripslashes($_REQUEST['username']);
@@ -12,7 +13,7 @@
         $loginValidation = $loginValidation->fetch();
 
         if ($loginValidation == false) {
-            echo 'mdp ou login faux';
+            $messageErrorLogin = 'Username or password incorrect';
         }
         else{
             $dbbPw = $loginValidation->password;

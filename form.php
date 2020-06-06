@@ -11,64 +11,64 @@
     <title>Formulaire</title>
 </head>
 <body>
-    <h2>Form</h2>
+    <h1>Create an Account</h1>
+    <div class="back-home">
+        <a href="./index.php"><img src="images/home.png" alt="login"></a>
+    </div>
 
-    <!-- Messages -->
-    <?php foreach($errorMessages as $_message): ?>
-        <div class="message error"><?= $_message ?></div>
-    <?php endforeach ?>
-    <?php foreach($successMessages as $_message): ?>
-        <div class="message success"><?= $_message ?></div>
-    <?php endforeach ?>
+    <div class="new-account">
+        <!-- Error Messages -->
+        <?php foreach($errorMessages as $_message): ?>
+            <div class="message-error"><?= $_message ?></div>
+        <?php endforeach ?>
+        
+        <!-- Form -->
+        <form action="#" method="post">
 
-
-    <!-- Form -->
-    <form action="#" method="post">
-
-        <!-- Login -->
-        <fieldset>
-            <label for="login">Login</label>
-            <br>
-            <input id="login" type="text" name="login" value="<?= $login ?>">
-        </fieldset>
-
-        <!-- Password -->
-        <fieldset>
-            <label for="password">Password</label>
-            <br>
-            <input id="password" type="password" name="password">
-        </fieldset>
-
-        <!-- Age -->
-        <fieldset>
-            <label for="age">Age</label>
-            <br>
-            <input id="age" type="text" name="age" value="<?= $age ?>">
-        </fieldset>
-
-        <!-- Gender -->
-        <fieldset>
-            <label>Gender</label>
-            <?php foreach($genders as $_gender): ?>
+            <!-- Login -->
+            <fieldset>
+                <label for="login">Login</label>
                 <br>
-                <label>
-                    <input
-                        type="radio"
-                        value="<?= $_gender ?>"
-                        name="gender"
-                        <?= $_gender === $gender ? 'checked' : '' ?>
-                    >
-                    <?= ucfirst($_gender) ?>
-                </label>
-            <?php endforeach ?>
-        </fieldset>
+                <input id="login" type="text" name="login" value="<?= $login ?>">
+            </fieldset>
 
-        <!-- Submit -->
-        <fieldset>
-            <input type="submit"> 
-        </fieldset>
+            <!-- Password -->
+            <fieldset>
+                <label for="password">Password</label>
+                <br>
+                <input id="password" type="password" name="password">
+            </fieldset>
 
-    </form>
+            <!-- Age -->
+            <fieldset>
+                <label for="age">Age</label>
+                <br>
+                <input id="age" type="text" name="age" value="<?= $age ?>">
+            </fieldset>
+
+            <!-- Gender -->
+            <fieldset>
+                <label>Gender</label>
+                <?php foreach($genders as $_gender): ?>
+                    <br>
+                    <label>
+                        <input
+                            type="radio"
+                            value="<?= $_gender ?>"
+                            name="gender"
+                            <?= $_gender === $gender ? 'checked' : '' ?>
+                        >
+                        <?= ucfirst($_gender) ?>
+                    </label>
+                <?php endforeach ?>
+            </fieldset>
+
+            <!-- Submit -->
+            <fieldset>
+                <input type="submit"> 
+            </fieldset>
+        </form>
+    </div>
 
 </body>
 </body>
