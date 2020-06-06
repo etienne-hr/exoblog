@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Mon blog voyage</h1>
-        
+        <div class="container">
         <?php 
             foreach ($articles as $key => $article) 
             {   
@@ -27,20 +27,23 @@
                 $title = $article->title; //the title
                 if($_SESSION == true)
                 {
-                    echo '<h2><a href="./includes/articles.php?id='.$articleId.'&article='.$title.'">'.$title.'</a></h2>';
-                    echo '<div class="img-article">
-                        <img src="./images/'.$title.'.jpg" alt="'.$title.'">
-                    </div>';
+                    // echo '<h2></h2>';
+                    // echo '<div class="img-article">
+                    //     <a href="./includes/articles.php?id='.$articleId.'&article='.$title.'">'.$title.'</a><img src="./images/'.$title.'.png" alt="'.$title.'">
+                    // </div>';
                 }
                 else
                 {
-                    echo '<h2><a href="./login.php">'.$title.'</a></h2>';
-                    echo '<div class="img-article">
-                        <img src="./images/'.$title.'.jpg" alt="'.$title.'">
+                    // echo '<h2><a href="./login.php">'.$title.'</a></h2>';
+                    echo 
+                    '<div class="img-article">
+                        <a href="./login.php"><img src="./images/'.$title.'.png" alt="'.$title.'"></a>
+                        <p> '.$title.' </p>
                     </div>';
                 }
-                echo '<span> '.$date.' </span>';
+                // echo '<span> '.$date.' </span>';
             }
         ?>
+        </div>
     </body>
     </html>
