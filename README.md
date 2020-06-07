@@ -25,6 +25,7 @@ School project building a blog with a sql database
 - Adding a security on the password as there is none
 - Session with a cookie 
 - An account administrator
+- Adding a comment without refresh the page
 
 ## AUthor 
 
