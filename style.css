@@ -235,11 +235,9 @@ fieldset
 
 .page-article 
 {
-    height: 500px;
+    height: 300px;
     width: 100%;
 }
-
-
 
 .page-article h2
 {
@@ -248,9 +246,64 @@ fieldset
     margin-left: 20%;
 }
 
+section
+{
+    margin-left: 20%;
+    width: 50%;
+}
+
+section span
+{
+    font-weight: bold;
+}
+
+.block-horizon
+{
+    margin-left: 20%;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 180px;
+    background: rgb(36, 146, 209);
+}
+
+.section-commentary
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-commentary span
+{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.section-commentary .commentary 
+{
+    width: 650px;
+    height: 300px;
+    background: #F8F7F7;
+    border: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), -4px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    overflow: auto;
+}
 
 
-
+textarea
+{
+    width: 600px;
+    height: 200px;
+    background: #F8F7F7;
+    border: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), -4px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    overflow: auto;
+    outline: none;
+}
 
 
 

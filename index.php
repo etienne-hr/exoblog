@@ -21,11 +21,15 @@
     <body>
         <header>
             <h1>My travel blog</h1>
-            <a href="./login.php"><img src="images/login.png" alt="login"></a>
             <?php
                 if ($_SESSION == true) 
                 {
                     echo '<div class="user-activ"><p>Hello '.$activUser.',</p></div>';
+                    echo '<a href="./logout.php"><img src="images/login.png" alt="login"></a>';
+                }
+                else
+                {
+                    echo '<a href="./login.php"><img src="images/login.png" alt="login"></a>';
                 }
             ?>
         </header>

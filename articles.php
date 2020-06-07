@@ -25,6 +25,8 @@
     $userId = $queryUserID->fetch();
 
     // commentary section 
+
+    //send a comment
     $commentValue = '';
     if($_POST)
     {
@@ -43,6 +45,8 @@
     header('Location: ./articles.php?id='.$id.'&article='.$title.'');
     exit;
     }
+
+    //All comments 
 
     $commentUserTab = [];
 
@@ -78,6 +82,9 @@
     <div class="back-home">
         <a href="./index.php"><img src="images/home.png" alt="login"></a>
     </div>
+    <div class="block-horizon">
+
+    </div>
     <?php 
             foreach ($article as $key => $section) 
             {   
@@ -87,30 +94,32 @@
 
                 $text = $section->text;
 
-                echo '<span> '.$date.' </span>';
 
-                echo '<section> '.$text.' </section>';
+                echo '<section> '.$text.' <span> '.$date.' </span></section>';
             }
         ?>
     
-            <section>
-            <span> Section commentaire :</span>
-    <?php
-            foreach ($commentUserTab as $key => $comment) 
-            {
-                $commentUser = $comment["username"];
-                $commentText = $comment["text"];
-                echo '<div> '.$users.' : '.$commentText.' </div>';
-            }
-    ?>
-            </section>
-
-            <form action="#" method="post">
-            <input type="text" name="sendcomment" id="lastcomment" value ="<?= $commentValue ?>">
-
-                <input type="submit" name="submitcomment">
+    <section class="section-commentary">
+        <span> Commentary section :</span>
+        <div class="commentary">
+            <?php
+                    foreach ($commentUserTab as $key => $comment) 
+                    {
+                        $commentUser = $comment["username"];
+                        $commentText = $comment["text"];
+                        echo '<div> '.$users.' : '.$commentText.' </div>';
+                    }
+            ?>
+        </div>
+        <form action="#" method="post">
+                <fieldset>
+                    <textarea  id="comment" cols="30" rows="10" name="sendcomment" id="lastcomment" value ="<?= $commentValue ?>"></textarea>
+                </fieldset>
+                <fieldset>
+                    <input type="submit" name="submitcomment" value="Send">
+                </fieldset>
             </form>
-
+    </section>
     
 </body>
 </html>
