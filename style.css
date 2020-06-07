@@ -305,6 +305,41 @@ textarea
     outline: none;
 }
 
+/* logout */
+
+.logout
+{
+    display: flex;
+    justify-content: center;
+}
+
+.logout button
+{
+    width: 250px;
+    height: 45px;
+    color: white;
+    background: rgb(219, 50, 50);
+    border: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), -4px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin-top: 12%;
+    outline: none;
+}
+
+.logout button:hover
+{
+    width: 250px;
+    height: 45px;
+    color: white;
+    background: rgb(196, 0, 0);
+    border: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), -4px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin-top: 12%;
+    outline: none;
+    transition: ease-in-out;
+    transition-duration: 0.25s;
+}
 
 
 

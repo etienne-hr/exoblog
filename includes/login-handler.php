@@ -21,8 +21,9 @@
             if ($dbbPw == $password && $dbbUsername == $username)
             {
                 $_SESSION['username'] = $username;
-                header("Location: index.php");
+                header("Location: ./index.php");
             }
             }
         }
+
 

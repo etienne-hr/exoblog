@@ -29,7 +29,7 @@
                 }
                 else
                 {
-                    echo '<a href="./login.php"><img src="images/login.png" alt="login"></a>';
+                    echo '<a href="./login.php?connect=notco"><img src="images/login.png" alt="login"></a>';
                 }
             ?>
         </header>
@@ -57,7 +57,7 @@
                     {
                         echo 
                         '<div class="img-article">
-                            <a href="./login.php"><img src="./images/'.$title.'.png" alt="'.$title.'"></a>
+                            <a href="./login.php?connect=errormessage"><img src="./images/'.$title.'.png" alt="'.$title.'"></a>
                             <p> '.$title.' </p>
                             <span> '.$date.' </span>;
                         </div>';

@@ -2,9 +2,15 @@
     //includes
 
     include './includes/login-handler.php';
-    if ($_SESSION == false) 
+
+    //Message error if the user try to read an article without being connected
+
+    $inactivUser = '';
+    $conn = $_GET['connect'];   
+        
+    if ($_SESSION == false && $conn == "errormessage") 
     {
-        $inactivUser = 'You must be register to read article';
+         $inactivUser = 'You must be register to read article';
     }
 
 ?>
@@ -24,7 +30,12 @@
     </div>
     <div class="login">
         <div class="message-error">
-            <p><?= $messageErrorLogin ?> </p>
+        <?php
+            if ($_SESSION == false && $conn == "errormessage") 
+            {
+                echo '<p>'.$inactivUser.'</p>';
+            }
+        ?>
         </div>
         <form action="#" method="post">
             <fieldset>
@@ -44,13 +55,7 @@
             </fieldset>
             <hr style="width:50%;text-align:center;margin-top:25px">
         </form>
-        <a href="http://localhost/exoblog/form.php#"><button>Create account</button></a>
-        <?php
-            if ($_SESSION == false) 
-            {
-                echo '<div class="unknown-user"><p>'.$inactivUser.'</p></div>';
-            }
-        ?>
+        <a href="./form.php#"><button>Create account</button></a>
     </div>
 </body>
 </html>
