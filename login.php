@@ -12,6 +12,10 @@
     {
          $inactivUser = 'You must be register to read article';
     }
+    else
+    {
+        $inactivUser = '';
+    }
 
 ?>
 
@@ -35,6 +39,7 @@
             {
                 echo '<p>'.$inactivUser.'</p>';
             }
+            echo '<p>'.$messageErrorLogin.'</p>';
         ?>
         </div>
         <form action="#" method="post">

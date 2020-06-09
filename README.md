@@ -10,13 +10,14 @@ School project building a blog with a sql database
 
 - Create an account on SQL database
 - Log in if you have an account (with a session in PHP)
+- Impossible to create an account if the username is already taken
 - If you try to read articles without being you will be on a login page with an error message
 - Possibility to add a comment on article
 - Log out the session 
 
 ## Helpfull ressources 
 
-- Grafikart course on PHP blog : https://www.grafikart.fr/tutoriels/tp-blog-css-1044
+- Grafikart course on PHP blog : https://www.youtube.com/watch?v=j0a1kQpELRo
 - PHP documentation
 - Bruno Simon course : https://bruno-simon.com/
 

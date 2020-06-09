@@ -1,6 +1,15 @@
 body
 {
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+html
+{
+    padding: 0;
+    margin: 0;
 }
 
 /* index */
@@ -41,6 +50,11 @@ header .user-activ p
     width: 500px;
     height: 250px; 
     overflow: hidden;
+}
+
+.container .img-article a img
+{
+    transition: all 0.5s ease-out;
 }
 
 
@@ -250,6 +264,7 @@ section
 {
     margin-left: 20%;
     width: 50%;
+    margin-bottom: 150px;
 }
 
 section span
@@ -268,17 +283,21 @@ section span
 
 .section-commentary
 {
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin: 0;
+    background: #2492d130;
+    padding: 25px;
 }
 
 .section-commentary span
 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    padding: 50px;
 }
 
 .section-commentary .commentary 
@@ -290,6 +309,7 @@ section span
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), -4px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
     overflow: auto;
+    margin-bottom: 25px;
 }
 
 
